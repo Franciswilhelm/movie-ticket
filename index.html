@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Movie Tickets</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h2>Movie Tickets</h2>
+      </div>
+      <h3>Make your selections bellow and find out the price of your ticket!</h3>
+      <form class="ticket-form">
+        <div class="form-group">
+          <label for="movie-name">Select Movie:</label>
+          <select class="form-control" id="movie-name">
+            <option>Fury</option>
+            <option>Rambo</option>
+            <option>7 Samurai</option>
+            <option>Eraser Head</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="movie-time">Select Movie:</label>
+          <select class="form-control" id="movie-time">
+            <option>10:00 am</option>
+            <option>12:05 pm</option>
+            <option>3:00 pm</option>
+            <option>7:30 pm</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="viewer-age">Select Movie:</label>
+          <select class="form-control" id="viewer-age">
+            <option>Child</option>
+            <option>Adult</option>
+            <option>Senior</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Calculate Cost!</button>
+      </form>
+
+      <div class="ticket-cost">
+
+      </div>
+    </div>
+  </body>
+</html>
