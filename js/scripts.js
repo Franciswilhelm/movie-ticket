@@ -23,7 +23,7 @@ function movieTimeDis(ticket) {
     var ticketPrice = viewerAgeDis(ticket) - 5;
     return ticketPrice;
   } else {
-    return ticketPrice;
+    return viewerAgeDis(ticket);
   }
 }
 
@@ -33,6 +33,8 @@ function movieTimeDis(ticket) {
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
+
+    $("#cost-of-ticket").empty();
 
     var inputtedMovie = $("#movie-name option:selected").val();
     var inputtedTime = $("#movie-time option:selected").val();
