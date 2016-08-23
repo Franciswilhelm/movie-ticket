@@ -4,26 +4,25 @@ function Ticket(movie, time, age) {
   this.viewerAge = age;
 }
 
-// Ticket.prototype.priceCalc = function(ticket) {
-//   var ticketPrice = 15;
-//
-//   if (ticket.viewerAge === "Child") {
-//     var ticketPrice = 5;
-//   } else if (ticket.viewerAge === "Senior") {
-//     var ticketPrice = 10;
-//   }
-// }
-
-var testTicket = new Ticket("Fury", "10:00 am", "Child");
-
-function priceCalc(ticket) {
+function viewerAgeDis(ticket) {
   var ticketPrice = 15;
 
   if (ticket.viewerAge === "Child") {
-    var ticketPrice = 5;
+    var ticketPrice = 7;
     return ticketPrice;
   } else if (ticket.viewerAge === "Senior") {
     var ticketPrice = 10;
+    return ticketPrice;
+  } else {
+    return ticketPrice;
+  }
+}
+
+function movieTimeDis(ticket) {
+  if (ticket.movieTime === "10:00 am" || ticket.movieTime === "12:05 pm") {
+    var ticketPrice = viewerAgeDis(ticket) - 5;
+    return ticketPrice;
+  } else {
     return ticketPrice;
   }
 }
@@ -31,11 +30,9 @@ function priceCalc(ticket) {
 
 
 
-
-
 $(document).ready(function() {
   $("form").submit(function(event) {
-    event.preventDefault;
+    event.preventDefault();
 
     var inputtedMovie = $("#movie-name option:selected").val();
     var inputtedTime = $("#movie-time option:selected").val();
@@ -43,8 +40,10 @@ $(document).ready(function() {
 
     var newTicket = new Ticket(inputtedMovie, inputtedTime, inputtedAge);
 
-    alert(priceCalc(newTicket));
+    $("div#cost-of-ticket").append("<h2>" + "$" + movieTimeDis(newTicket) + ".00" + "</h2>");
 
+    $(".ticket-cost").show();
 
   });
+
 });
